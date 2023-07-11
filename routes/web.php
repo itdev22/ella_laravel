@@ -11,6 +11,8 @@
 |
 */
 
+use App\User;
+
 Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
@@ -25,16 +27,18 @@ Route::prefix('account')->group(function () {
 
     //categories debit
     Route::get('/categories_debit/search', 'account\CategoriesDebitController@search')->name('account.categories_debit.search');
-    Route::Resource('/categories_debit', 'account\CategoriesDebitController',['as' => 'account']);
+    Route::Resource('/categories_debit', 'account\CategoriesDebitController', ['as' => 'account']);
     //debit
     Route::get('/debit/search', 'account\DebitController@search')->name('account.debit.search');
-    Route::Resource('/debit', 'account\DebitController',['as' => 'account']);
+    Route::Resource('/debit', 'account\DebitController', ['as' => 'account']);
+
     //categories credit
     Route::get('/categories_credit/search', 'account\CategoriesCreditController@search')->name('account.categories_credit.search');
-    Route::Resource('/categories_credit', 'account\CategoriesCreditController',['as' => 'account']);
+    Route::Resource('/categories_credit', 'account\CategoriesCreditController', ['as' => 'account']);
     //credit
     Route::get('/credit/search', 'account\CreditController@search')->name('account.credit.search');
-    Route::Resource('/credit', 'account\CreditController',['as' => 'account']);
+    Route::Resource('/credit', 'account\CreditController', ['as' => 'account']);
+
     //laporan debit
     Route::get('/laporan_debit', 'account\LaporanDebitController@index')->name('account.laporan_debit.index');
     Route::get('/laporan_debit/check', 'account\LaporanDebitController@check')->name('account.laporan_debit.check');
@@ -42,4 +46,7 @@ Route::prefix('account')->group(function () {
     Route::get('/laporan_credit', 'account\LaporanCreditController@index')->name('account.laporan_credit.index');
     Route::get('/laporan_credit/check', 'account\LaporanCreditController@check')->name('account.laporan_credit.check');
 
+    //add user
+    Route::get('/user/create', 'account\UserController@create')->name('account.user.create');
+    Route::post('/user', 'account\UserController@store')->name('account.user.store');
 });

@@ -9,6 +9,8 @@ use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
+    public const RoleAdmin = 'admin';
+    public const RoleOwner = 'owner';
     use HasApiTokens, Notifiable;
 
     /**
@@ -17,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'full_name', 'username', 'email', 'password',
+        'full_name', 'username', 'email', 'password', 'role'
     ];
 
     /**

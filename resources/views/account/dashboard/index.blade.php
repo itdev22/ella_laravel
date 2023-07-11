@@ -6,9 +6,7 @@
 
 @section('content')
 
-    <script>
-
-    </script>
+    <script></script>
 
     <div class="main-content">
         <section class="section">
@@ -58,21 +56,51 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4><i class="fas fa-chart-pie"></i> STATISTIK KEUANGAN DALAM 1 TAHUN</h4>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="card card-statistic-2">
+                        <div class="card-icon shadow-primary bg-primary">
+                            <i class="fas fa-money-check-alt"></i>
                         </div>
-
-                        <div class="card-body">
-                            <div id="container"></div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>SALDO Masuk</h4>
+                            </div>
+                            <div class="card-body" style="font-size: 20px">
+                                {{ rupiah($saldoMasuk) }}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <div class="card card-statistic-2">
+                        <div class="card-icon shadow-primary bg-primary">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>SALDO Keluar</h4>
+                            </div>
+                            <div class="card-body" style="font-size: 20px">
+                                {{ rupiah($saldoKeluar) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h4><i class="fas fa-chart-pie"></i> STATISTIK KEUANGAN DALAM 1 TAHUN</h4>
+                                                </div>
+
+                                                <div class="card-body">
+                                                    <div id="container"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
 
         </section>
     </div>
